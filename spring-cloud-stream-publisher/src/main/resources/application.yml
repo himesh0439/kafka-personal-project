@@ -1,0 +1,18 @@
+server:
+  port: 8091
+spring:
+  cloud.stream:
+    function:
+      destination: consumeData
+    bindings:
+      consumeData-in-0:
+        destination: user-data
+    kafka:
+      bindings:
+        consumeData-in-0:
+          consumer:
+            configuration:
+              value:
+                deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      broker:
+        brokers: 127.0.0.1:9092

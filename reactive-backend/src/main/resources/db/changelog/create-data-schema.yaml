@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: himesh
+      changes:
+      -  createTable:
+          catalogName: User
+          columns:
+          - column:
+             name: id
+             type: varchar(255)
+             constraints:
+              primaryKey: true
+          - column:
+             name: email
+             type: varchar(255)
+          - column:
+             name: first_name
+             type: varchar(255)
+          - column:
+              name: last_name
+              type: varchar(255)
+          - column:
+              name: avatar
+              type: varchar
+          tableName: data
